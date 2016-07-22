@@ -141,6 +141,7 @@ No desenvolvimento do back-end, saber quao o público-alvo vai influenciar em qu
 Conseguimos perceber até aqui que o *progressive enhancement* não é apenas uma forma de desenvolver o código front-end: **é uma forma diferente de pensar o desenvolvimento do produto como um todo.**
 
 Sendo assim, uma possível resposta para a pergunta "por onde começar" é:
+   
     * pelo planejamento do produto
 Uma vez que se tenham bem claros os objetivos do produto, as decisões técnicas tornam-se simples.
 
@@ -155,3 +156,5 @@ Veja só:
 * Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidades desejadas, podemos entregar as que atendem aos cenários mais limirados primeiro.
 
 * Se o não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.
+
+
