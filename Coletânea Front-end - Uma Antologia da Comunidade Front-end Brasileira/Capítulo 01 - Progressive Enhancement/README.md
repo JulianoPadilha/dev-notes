@@ -118,3 +118,8 @@ No entanto, aplicar o **progressive enhancement** não é tão fácil como p
 
 ## Por onde começar?
 
+- Começar a desenvolver seguindo a linha do *progressive enhancement* influencia os mais diversos aspectos dentro de um projeto.
+
+>Por exemplo, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em: 
+
+- [x] Qual nosso público-alvo?
