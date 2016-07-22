@@ -122,4 +122,8 @@ No entanto, aplicar o **progressive enhancement** não é tão fácil como p
 
 >Por exemplo, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em: 
 
-- [x] Qual nosso público-alvo?
+- [ ] Qual nosso público-alvo?
+- [ ] Será que precisamos nos preocupar com navegadores antigos?
+- [ ] Qual a parcela de visitantes do meu site que virá de dispositivos móveis?
+- [ ] Quão importante é a integração com redes sociais?
+- [ ] O que posso oferecer para meus visitantes com configurações mais limitadas?
