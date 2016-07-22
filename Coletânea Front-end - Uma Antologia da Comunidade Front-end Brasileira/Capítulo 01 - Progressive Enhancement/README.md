@@ -162,3 +162,18 @@ Veja só:
 Em todo projeto, temos três variáveis possíveis de serem controladas: orçamento, prazo e qualidade. No entanto, é impossível controlar as três **ao mesmo tempo**: se  fixamos prazo e qualidade, o produto sai mais caro; se  fixamos prazo e orçamento, a qualidade diminui; se  fixamos orçamento e qualidade, o desenvolvimento demorará mais.
 
 Contudo, sacrificar a qualidade normalmente não é uma boa alternativa. Sendo assim, se o prazo não é suficiente para entregar todas as funcionalidades, não entregue nada mal feito; entregue o que for possível. E, se você estiver seguindo o *progressive enhancement*, as funcionalidades que você entregar são aquelas que influenciam os cenários mais limitados, ou seja, o maior número de usuários possível.
+
+- Repare que atender ao cenário mais limitado primeiro não significa necessariamente começar a desenvolver pelos navegadores mais antigos, por exemplo. Novamente, **essa é uma decisão que cabe ao cliente do projeto**. O papel que cabe ao desenvolver é informar o cliente das consequências de incluir ou excluir determinadas tecnologias do projeto.
+
+- Vale lembrar que com as tecnologias disponíveis atualmente, é possível fazer mais com menos. Os navegadores vêm evoluindo bastante e oferecendo ferramentas cada vez mais avançadas para resolver a maior parte dos problemas.
+
+- Sem falar que o CSS e HTML vêm ganhando recursos poderossísimos que são capazes de nos livrar da necessidade de usar Javascript em diversos casos. 
+
+>Um exemplo: a implementação de navegação em abas
+
+Antigamente, esse tipo de solução precisava de Javascript para ser implementada; hoje em dia, é possível implementá-la apenas com CSS e HTML, tonando-a disponível para um público ainda maior de usuários. 
+
+
+## Progressive Enhancement e HTML
+
+
