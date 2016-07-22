@@ -118,7 +118,7 @@ No entanto, aplicar o **progressive enhancement** não é tão fácil como p
 
 ## Por onde começar?
 
-- Começar a desenvolver seguindo a linha do *progressive enhancement* influencia os mais diversos aspectos dentro de um projeto.
+Começar a desenvolver seguindo a linha do *progressive enhancement* influencia os mais diversos aspectos dentro de um projeto.
 
 >Por exemplo, se formos desenvolver um site para divulgar um produto, podemos pensar, antes de mais nada em: 
 
@@ -127,3 +127,31 @@ No entanto, aplicar o **progressive enhancement** não é tão fácil como p
 - [ ] Qual a parcela de visitantes do meu site que virá de dispositivos móveis?
 - [ ] Quão importante é a integração com redes sociais?
 - [ ] O que posso oferecer para meus visitantes com configurações mais limitadas?
+
+Como podemos perceber, estas questões estão muito mais relacionadas ao contexto do seu negócio do que a questão técnica. Responder essas perguntas adequadamente é muito importante para guiar o processo de aplicação do conceito de *progressive enhancement* corretamente dentro de um projeto.
+
+Tendo claro o público-alvo do seu projeto, normalmente começam duas frentes de trabalho: 
+
+* o desenvolvimento da lógica a aplicação (back-end)
+
+* e o projeto da interface (front-end)
+
+No desenvolvimento do back-end, saber quao o público-alvo vai influenciar em quais funcionalidades serão implementadas e como. Já no desenvolvimento do front-end, o paradigma do *progressive enhancement* influenciará diretamente o fluxo de desenvolvimento.
+
+Conseguimos perceber até aqui que o *progressive enhancement* não é apenas uma forma de desenvolver o código front-end: **é uma forma diferente de pensar o desenvolvimento do produto como um todo.**
+
+Sendo assim, uma possível resposta para a pergunta "por onde começar" é:
+    * pelo planejamento do produto
+Uma vez que se tenham bem claros os objetivos do produto, as decisões técnicas tornam-se simples.
+
+Em um cenário real, dificilmente isso é possível de acontecer. Normalmente temos que lidar com um público-alvo pouco conhecido, dificuldades na hora de tomar decisões mais técnicas junto ao cliente e limitações de orçamento e no prazo de entrega.
+
+Ainda com todos estes percalços, é possível aplica o *progressive enhancement*.
+
+Veja só:
+
+* Se não sabemos qual o cenário mais limitado a que vamos atender, podemos começar pelo mais limitado.
+
+* Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidades desejadas, podemos entregar as que atendem aos cenários mais limirados primeiro.
+
+* Se o não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.
