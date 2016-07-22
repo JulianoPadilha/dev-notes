@@ -157,4 +157,8 @@ Veja só:
 
 * Se o não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.
 
+### Entregando com qualidade
 
+Em todo projeto, temos três variáveis possíveis de serem controladas: orçamento, prazo e qualidade. No entanto, é impossível controlar as três **ao mesmo tempo**: se  fixamos prazo e qualidade, o produto sai mais caro; se  fixamos prazo e orçamento, a qualidade diminui; se  fixamos orçamento e qualidade, o desenvolvimento demorará mais.
+
+Contudo, sacrificar a qualidade normalmente não é uma boa alternativa. Sendo assim, se o prazo não é suficiente para entregar todas as funcionalidades, não entregue nada mal feito; entregue o que for possível. E, se você estiver seguindo o *progressive enhancement*, as funcionalidades que você entregar são aquelas que influenciam os cenários mais limitados, ou seja, o maior número de usuários possível.
