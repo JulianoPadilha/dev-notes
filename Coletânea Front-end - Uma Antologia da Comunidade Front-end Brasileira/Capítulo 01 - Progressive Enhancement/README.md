@@ -176,4 +176,45 @@ Antigamente, esse tipo de solução precisava de Javascript para ser implementad
 
 ## Progressive Enhancement e HTML
 
+Para começar pelo cenário mais restrito, precisamos antes pensar em quais tecnologias podemos usar nesse cenário. Há várias possibilidades mas, sem dúvida, todas elas têm suporte ao HTML.
+
+Como sabemos, o HTML é a base de toda página na Internet e, portanto, todo usuário do nosso site, seja humano ou máquina, tem que entender pelo menos HTML; sempre podemos contar com ele.
+
+>Atualmente, todos os navegadores, em sua última versão, trabalham com a versão 5 do HTML. Porém, o que isso significa? 
+
+Quando dizemos HTML5, na verdade, estamos falando de uma série de novas funcionalidades agregadas à̀ linguagem HTML: novas tags, novos atributos, novos controles de formulário, novas APIs, além de modificações de sintaxe e semântica. São muitos novos recursos, de modo que os navegadores, em sua maior parte, ainda não implementam toda a especificação do HTML5.
+
+Felizmente, a especificação da linguagem HTML já foi feita pensando em *progressive enhancement*. Para entender o porquê, vamos analisar o que acontece quando um navegador analisa o seguinte HTML:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Teste de HTML5</title>
+    </head>
+    <body>
+        <header>
+            <h1>Página com HTML5</h1>
+            <span>Bacana, né?</span>
+        </header>
+        <section>
+            <h1>Hora atual</h1>
+            <time>22:39</time>
+            <p>Um controle de form novo:</p>
+            <input type="range" min="1" max="10">
+        </section>
+    </body>
+</html>
+```
+
+- logo no começo do código, estamos usando a declaração DOCTYPE para indicar que estamos usando a última versão do HTML, ou seja, o navegador deve mostrar todo o seu potencial!
+
+>E se o navegador não implementa suporte a todos esses recursos, o que acontece? Já na versão, a especificação do HTML recomenda que [1]:
+
+- Se um agente de usuário encontrar um elemento que não reconhece, ele deve tentar renderizar seu conteúdo;
+
+- Se um agente de usuário encontrar um atributo que não reconhece, ele deve ignorar a declaração completa deste atributo, isto é, o atributo e seu valor;
+
+- Se um agente de usuário encontrar um valor de atributo que não reconhece, ele deve usar o valor padrão para aquele atributo.
 
