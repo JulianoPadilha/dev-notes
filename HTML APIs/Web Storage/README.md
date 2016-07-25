@@ -11,7 +11,7 @@ O sessionStorage mantém as informações armazenadas por origem e permanece dis
 
 - `localStorage`
 
-O localStorage é muito parecido com o sessionStorage, a diferente é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
+O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
 
 
 Esses mecanismos estão disponíveis a partir das seguintes propriedades `Window.sessionStorage` e `Window.localStorage` (para um maior suporte, o objeto Window implementa os objetos  Window.LocalStorage e Window.SessionStorage) — ao invocar uma dessas propriedades, é criada uma instância do objeto Storage, que fornece métodos para inserir, recuperar e remover os dados.
