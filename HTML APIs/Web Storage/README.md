@@ -15,7 +15,7 @@ O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo
 
 Com Local Storage, aplicações web podem armazenar dados localmente no navegador do usuário. Antes do HTML5, os dados de uma aplicação tinham que ser amazenados em cookies. Com Local Storage é mais seguro e grandes quantidades de dados podem ser armazenados localmente, sem afetar o desempenho do site.
 
-Ao contrário dos cookies, o limite de armazenamento é muito maior (pelo menos 5MB) e a informação não é tranferida para o servidor.
+Ao contrário dos cookies, o limite de armazenamento é muito maior (pelo menos 5MB) e a informação não é transferida para o servidor.
 
 Local Storage é muito útil, por exemplo, em sites de e-commerce, onde o usuário pode ter adicionado algo no seu carrinho de compras e fechado o navegador. Quando ele retornar para o site, os itens do seu carrinho continuarão lá disponíveis, isso porque as informações foram armazenadas no Local Storage do seu browser. 
 
