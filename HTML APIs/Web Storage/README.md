@@ -13,6 +13,11 @@ O sessionStorage mantém as informações armazenadas por origem e permanece dis
 
 O localStorage é muito parecido com o sessionStorage, a diferença é que mesmo que o navegador seja fechado, os dados permanecem armazenados.
 
+Com Local Storage, aplicações web podem armazenar dados localmente no navegador do usuário. Antes do HTML5, os dados de uma aplicação tinham que ser amazenados em cookies. Com Local Storage é mais seguro e grandes quantidades de dados podem ser armazenados localmente, sem afetar o desempenho do site.
+
+Ao contrário dos cookies, o limite de armazenamento é muito maior (pelo menos 5MB) e a informação não é tranferida para o servidor.
+
+Local Storage é muito útil, por exemplo, em sites de e-commerce, onde o usuário pode ter adicionado algo no seu carrinho de compras e fechado o navegador. Quando ele retornar para o site, os itens do seu carrinho continuarão lá disponíveis, isso porque as informações foram armazenadas no Local Storage do seu browser. 
 
 Esses mecanismos estão disponíveis a partir das seguintes propriedades `Window.sessionStorage` e `Window.localStorage` (para um maior suporte, o objeto Window implementa os objetos  Window.LocalStorage e Window.SessionStorage) — ao invocar uma dessas propriedades, é criada uma instância do objeto Storage, que fornece métodos para inserir, recuperar e remover os dados.
 
