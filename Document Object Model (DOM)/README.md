@@ -138,3 +138,15 @@ A seguir está uma breve lista das APIs comuns para scripting usando o DOM em we
 >Escrever sobre cada uma delas
 
 >Fonte: [https://developer.mozilla.org/pt-PT/docs/Gecko_DOM_Reference/Introduction](https://developer.mozilla.org/pt-PT/docs/Gecko_DOM_Reference/Introduction)
+
+- Para saber mais sobre DOM Interfaces:
+
+>Fonte: [https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+- Exemplos: 
+
+>Fonte: [https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples)
+
+- Lista de interações comuns de JavaScript no DOM:
+
+>Fonte: [https://plainjs.com/javascript/](https://plainjs.com/javascript/)
