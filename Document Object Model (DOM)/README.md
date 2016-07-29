@@ -1,5 +1,7 @@
 # Document Object Model - DOM
 
+![](imagens/ilustracao_dom.png)
+
 ## O que é o DOM?
 
 O Document Object Model (DOM) é uma interface de programação para documentos HTML e XML. Ele provê uma representação estruturada do documento e define um meio pelo qual a estrutura pode ser acessada por programas permitindo-os alterar a estrutura do documento, estilo e conteúdo. O DOM provê uma representação do documento como um conjunto estruturado de nós e objetos que têm propriedades e métodos. Essencialmente ele conecta páginas de internet a scripts ou linguagens de programação.
