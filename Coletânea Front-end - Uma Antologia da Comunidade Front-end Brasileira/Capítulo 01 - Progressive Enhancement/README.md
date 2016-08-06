@@ -218,3 +218,136 @@ Felizmente, a especificação da linguagem HTML já foi feita pensando em *pr
 
 - Se um agente de usuário encontrar um valor de atributo que não reconhece, ele deve usar o valor padrão para aquele atributo.
 
+Repare que a recomendação é bem favorável à aplicação do progressive enhancement: mesmo que o navegador não entenda exatamente o que estamos querendo dizer, ele vai mostrar o contúdo para o usuário; **podemos incrementar a semântica e a interatividade do nosso HTML sem quebrar os navegadores mais limitados!**
+
+No exemplo dado anteriormente, se o navegador não suporta a tag <time> e o `input` do tipo `range`, ainda assim o usuário verá a hora e um controle de formulário (uma caixa de texto, que é o controle de formulário padrão).
+
+
+## Progressive Enhancement e CSS
+
+Uma vez que tenhamos a base - o HTML - de uma página bem definida, podemos começar a implementar o design com CSS.
+
+Assim como o HTML, o CSS é uma tecnologia já antiga e que passou por uma grande evolução, culminando no que chamamos agora de **CSS 3**. Assim como o caso do HTML, os navegadores não implementam suporte a todas as novidades, mesmo porque elas continuam vindo, mas os navegadores ignoram as propriedades desconhecidas, de modo que também é muito fácil ir incrementando nosso visual de acordo com as funcionalidades disponíveis.
+
+Além disso, o CSS tem uma outra característica peculiar que facilita o progressive enhancement: quando uma propriedade aparece duplicada, apenas a última declaração é considerada.
+
+Veja como esse comportamento nos permite fazer progressive enhancement de um jeito fácil: basta ir acrescentando as funcionalidades mais recentes abaixo das mais antigas!
+
+### Indo além com CSS
+
+Quando pensamos em progressive enhancement, devemos pensar em dar a melhor experiência possível para os cenários limitados. Isso implica em tirar o maior proveito possível das ferramentas que temos nesses cenários.
+
+A maior parte dos sites que vamos desenvolver no nosso dia a dia precisará de CSS para ser visualmente agradável e atrair mais usuários. Ou seja, mesmo nos cenários mais limitados, já estaremos dependentes de CSS.
+
+Muitos requisitos de front-end que normalmente implementamos com JavaScript podem ser feitos apenas com CSS, ou seja, sem depender de mais uma tecnologia.
+
+Implementações podem ser conferidas com mais detalhes em [http://css-tricks.com/examples/CSSTabs](http://css-tricks.com/examples/CSSTabs)
+
+
+## Progressive Enhancement e JavaScript
+
+Desenvolver pensando primeiro nos cenários mais limitados já evita que caiamos no tipo de armadilha mostrada na introdução deste capítulo, com o formulário AJAX.
+
+No entanto, quando adicionamos JavaScript à̀ página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.
+
+Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso signi ca que, na medida do possível, o código JavaScript não deve interferir no seu HTML. Por exemplo, em vez de fazer um link virar uma ação em JavaScript com
+
+```html
+<a href="#" onclick="maisProdutos()">Mais produtos</a>
+```
+
+devemos preservar o HTML original
+
+```html
+<a href="mais-produtos.html">Mais produtos</a>
+```
+
+e adicionar a funcionalidade JavaScript usando o próprio JavaScript, em algo como
+
+```js
+document.querySelector(’[href="mais-produtos.html"]’).addEventListener(’click’, maisProdutos);
+```
+
+Dessa forma, nosso site continua funcionando perfeitamente, mesmo que o JavaScript apresente algum problema, e essa é uma das principais vantagens do progressive enhancement para o seu desenvolvimento. Esse tipo de pensamento é conhecido entre os desenvolvedores JavaScript como JavaScript não-obstrutivo.
+
+É fato que, em muitos casos, algumas funcionalidades só estarão presentes para usuários com JavaScript habilitado. Por exemplo: imagine que queremos fazer uma caixa de busca para filtrar uma lista de resultados. Como podemos desenvolver algo deste tipo pensando em progressive enhancement?
+
+A resposta para essa pergunta sempre é começando pelo cenário mais limitado. E o que podemos oferecer para nossos usuários só com HTML, por exemplo? Uma simples lista:
+
+```html
+<h1>Sobremesas</h1>
+<ul class="resultados">
+     <li><a href="receita?id=123">Bolo de nozes</a></li>
+     <li><a href="receita?id=234">Estrogonofe de nozes</a></li>
+     <li><a href="receita?id=345">Bolo de chocolate</a></li>
+     <li><a href="receita?id=456">Torta de chocolate</a></li>
+     <li><a href="receita?id=567">Torta de maçã</a></li>
+</ul>
+```
+
+Depois de incrementar a página com o estilo, passamos à funcionalidade da busca. E, para implementá-la, podemos facilmente pensar em mudar nosso HTML para algo do tipo:
+
+```html
+<h1>Sobremesas</h1>
+<input type="search" onkeyup="filtra()">
+<ul class="resultados">
+     <li><a href="receita?id=123">Bolo de nozes</a></li>
+     <li><a href="receita?id=234">Estrogonofe de nozes</a></li>
+     <li><a href="receita?id=345">Bolo de chocolate</a></li>
+     <li><a href="receita?id=456">Torta de chocolate</a></li>
+     <li><a href="receita?id=567">Torta de maçã</a></li>
+</ul>
+```
+
+Porém, ao fazermos isso, sem percebermos, estamos oferecendo uma página “quebrada” para os usuários sem JavaScript. Afinal, para que serve esta caixa de busca para eles? **Nada**; portanto, ela simplesmente não deveria estar lá. Mas como fazemos para ela aparecer só para os usuários que têm JavaScript funcionando? **Inserindo-a via JavaScript!**
+
+```js
+var busca = document.createElement(’input’);
+busca.type = ’search’;
+var resultados = document.querySelector(’.resultados’);
+resultados.parentNode.insertBefore(busca, resultados);
+```
+
+Ou seja, quando temos a preocupação do progressive enhancement na implementação das funcionalidades que dependem de JavaScript, uma boa prática é usar apenas JavaScript para acrescentá-las ao site. Com isso, asseguramos que não quebraremos o trabalho anterior e, de quebra, deixamos nosso código mais organizado.
+
+### Lidando com JavaScript limitado
+
+Um ponto que não gera dores de cabeça no HTML e no CSS mas que, no JavaScript, é bastante complicado é lidar com funcionalidades faltantes. Vimos que, com relação ao HTML, o navegador mostra informações de tags desconhecidas e, com relação ao CSS, o navegador ignora propriedades e valores não suportados; o mesmo não acontece com o JavaScript: qualquer comando que não seja suportado pelo navegador gerará um erro de JavaScript, consequentemente parando toda a execução do código.
+
+Lidar com as limitações e diferenças entre os navegadores pode ser bas- tante trabalhoso. Por exemplo, para selecionar elementos da página, podemos usar a função `document.querySelector`, como  zemos no exemplo anterior. No entanto, essa função não está presente em todos os navegadores. Para que nosso código funcione em todos os navegadores, podemos usar a função `document.getElementsByClassName`:
+
+```js
+var resultados = document.getElementsByClassName(’resultados’)[0];
+```
+
+Imagine agora, por exemplo, que você está construindo um site de uma rede de restaurantes e quer mostrar para um usuários os pratos exclusivos de sua região em destaque. Para isso, você pode perguntar em qual cidade o usuário está ou, mais interessante, tentar detectar onde ele está. Isso é possível por meio da API de geolo- calização dos navegadores:
+
+```js
+navigator.geolocation.getCurrentPosition(function(position) {
+    // descobre a cidade baseado nas coordenadas
+});
+```
+
+Porém, nem todo navegador tem suporte a essa API e, quando não há suporte, o objeto geolocation não está de nido e, portanto, o código anterior gera um erro.
+
+Uma outra abordagem, mais simples e robusta, é vericar se o navegador do usuário tem a funcionalidade desejada, independente de qual seja. Neste nosso caso, é simples fazer isso: basta veri car se o objeto geolocation está de nido antes de usá-lo.
+
+```js
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        // descobre a cidade baseado nas coordenadas
+}); }
+```
+
+Nos casos em que a detecção da funcionalidade é mais complicada, podemos usar a biblioteca Modernizr (http://modernizr.com/) , cujo propósito é justamente detectar as funcionalidades disponíveis no navegador.
+
+
+## Quando o Progressive Enhancement não é uma alternativa
+
+A abordagem do progressive enhancement resolve muitos problemas do desenvolvedor front-end ao forçar o foco primeiro na parte mais importante de um site, que é prover o conteúdo. No entanto, progressive enhancement tem suas desvantagens e nem sempre é aplicável. 
+
+Quando desenvolvemos pensando primeiro nos cenários mais limitados, conse- guimos planejar nosso desenvolvimento de modo a tornar nosso site minimamente acessível nesses cenários. No entanto, isso pode ser restritivo para o processo criativo de desenvolvimento de um site. Imagine, por exemplo, que você precisa fazer uma página mostrando as funcionalidades de um aparelho celular novo. O jeito mais sim- ples e que atende a todos os usuários é simplesmente montar uma lista dessas funcionalidades, possivelmente com imagens ilustrativas. Porém, pensando dessa forma, você pode acabar deixando de apresentá-las de uma forma mais criativa, como um menu interativo. Para não correr esse risco, vale a pena pensar primeiro em como queremos que nosso site  que no  nal para, daí, começar a implementar pelo cenário mais limitado. Essa ideia de projeto  nal, inclusive, pode servir de guia para soluções mais criativas mesmo nesses primeiros cenários.
+
+É́ possível desenvolver uma versão mais simples, sem as funcionalidades principais, para os cenários mais limitados, usando progressive enhancement. Essa abordagem é seguida, por exemplo, pelo Gmail, o serviço de e-mail da Google. A versão principal do cliente web é desenvolvida usando recursos avançados de JavaScript. Para simpli car o desenvolvimento dessa versão e ainda permitir o acesso aos e-mails nos navegadores mais limitados, foi desenvolvida uma versão baseada apenas em HTML.
+
+Mesmo nos cenários em que progressive enhancement não é aplicável, é interes- sante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do progressive enhancement: fazer da web uma só, para todos, como idealizou o criador da web, Tim Bernes-Lee.
