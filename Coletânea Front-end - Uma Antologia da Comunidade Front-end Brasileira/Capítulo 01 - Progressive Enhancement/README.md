@@ -111,7 +111,7 @@ $("#comprar").submit(function() {
 
 Veja que, agora, não precisamos mais nos preocupar com os dados do formulário individualmente nem com a URI da compra. Por estarmos usando um formulário semântico, podemos simplesmente pedir para o jQuery pegar os dados desse formulário e enviá-lo como o navegador faria, porém de forma assíncrona.
 
-Quando começamos por um cenário mais limitado, é natural querermos solucioná-lo adequadamente. Isso nos força a pensar e desenvolver de uma forma que favorece um HTML mais semântico e desacoplado de CSS e JavaScript. Ganha-mos não apenas um site que funciona bem para todos; ganhamos também um código **mais limpo e fácil de manter**.
+Quando começamos por um cenário mais limitado, é natural querermos solucioná-lo adequadamente. Isso nos força a pensar e desenvolver de uma forma que favorece um HTML mais semântico e desacoplado de CSS e JavaScript. Ganhamos não apenas um site que funciona bem para todos; ganhamos também um código **mais limpo e fácil de manter**.
 
 No entanto, aplicar o **progressive enhancement** não é tão fácil como pode parecer à primeira vista. Diversas questões aparecem: *qual vai ser meu cenário mais limitado? Por onde começar? Como acrescentar funcionalidade sem quebrar o que eu já tinha?*
 
@@ -153,9 +153,9 @@ Veja só:
 
 * Se não sabemos qual o cenário mais limitado a que vamos atender, podemos começar pelo mais limitado.
 
-* Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidades desejadas, podemos entregar as que atendem aos cenários mais limirados primeiro.
+* Se não temos orçamento e/ou prazo suficiente para desenvolver todas as funcionalidades desejadas, podemos entregar as que atendem aos cenários mais limitados primeiro.
 
-* Se o não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.
+* Se não sabemos quais tecnologias os visitantes do site vão usar para acessar o conteúdo, começamos com o mínimo possível de tecnologias.
 
 ### Entregando com qualidade
 
@@ -250,7 +250,7 @@ Desenvolver pensando primeiro nos cenários mais limitados já evita que caiam
 
 No entanto, quando adicionamos JavaScript à̀ página, precisamos tomar certos cuidados para não quebrar o trabalho já feito, assim como no CSS.
 
-Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso signi ca que, na medida do possível, o código JavaScript não deve interferir no seu HTML. Por exemplo, em vez de fazer um link virar uma ação em JavaScript com
+Da mesma forma que devemos pensar no CSS como algo a mais em uma página, devemos também pensar no JavaScript dessa forma. Isso significa que, na medida do possível, o código JavaScript não deve interferir no seu HTML. Por exemplo, em vez de fazer um link virar uma ação em JavaScript com
 
 ```html
 <a href="#" onclick="maisProdutos()">Mais produtos</a>
@@ -314,7 +314,7 @@ Ou seja, quando temos a preocupação do progressive enhancement na implementa
 
 Um ponto que não gera dores de cabeça no HTML e no CSS mas que, no JavaScript, é bastante complicado é lidar com funcionalidades faltantes. Vimos que, com relação ao HTML, o navegador mostra informações de tags desconhecidas e, com relação ao CSS, o navegador ignora propriedades e valores não suportados; o mesmo não acontece com o JavaScript: qualquer comando que não seja suportado pelo navegador gerará um erro de JavaScript, consequentemente parando toda a execução do código.
 
-Lidar com as limitações e diferenças entre os navegadores pode ser bas- tante trabalhoso. Por exemplo, para selecionar elementos da página, podemos usar a função `document.querySelector`, como  zemos no exemplo anterior. No entanto, essa função não está presente em todos os navegadores. Para que nosso código funcione em todos os navegadores, podemos usar a função `document.getElementsByClassName`:
+Lidar com as limitações e diferenças entre os navegadores pode ser bastante trabalhoso. Por exemplo, para selecionar elementos da página, podemos usar a função `document.querySelector`, como  fizemos no exemplo anterior. No entanto, essa função não está presente em todos os navegadores. Para que nosso código funcione em todos os navegadores, podemos usar a função `document.getElementsByClassName`:
 
 ```js
 var resultados = document.getElementsByClassName(’resultados’)[0];
@@ -346,8 +346,8 @@ Nos casos em que a detecção da funcionalidade é mais complicada, podemos u
 
 A abordagem do progressive enhancement resolve muitos problemas do desenvolvedor front-end ao forçar o foco primeiro na parte mais importante de um site, que é prover o conteúdo. No entanto, progressive enhancement tem suas desvantagens e nem sempre é aplicável. 
 
-Quando desenvolvemos pensando primeiro nos cenários mais limitados, conse- guimos planejar nosso desenvolvimento de modo a tornar nosso site minimamente acessível nesses cenários. No entanto, isso pode ser restritivo para o processo criativo de desenvolvimento de um site. Imagine, por exemplo, que você precisa fazer uma página mostrando as funcionalidades de um aparelho celular novo. O jeito mais sim- ples e que atende a todos os usuários é simplesmente montar uma lista dessas funcionalidades, possivelmente com imagens ilustrativas. Porém, pensando dessa forma, você pode acabar deixando de apresentá-las de uma forma mais criativa, como um menu interativo. Para não correr esse risco, vale a pena pensar primeiro em como queremos que nosso site  que no  nal para, daí, começar a implementar pelo cenário mais limitado. Essa ideia de projeto  nal, inclusive, pode servir de guia para soluções mais criativas mesmo nesses primeiros cenários.
+Quando desenvolvemos pensando primeiro nos cenários mais limitados, conseguimos planejar nosso desenvolvimento de modo a tornar nosso site minimamente acessível nesses cenários. No entanto, isso pode ser restritivo para o processo criativo de desenvolvimento de um site. Imagine, por exemplo, que você precisa fazer uma página mostrando as funcionalidades de um aparelho celular novo. O jeito mais simples e que atende a todos os usuários é simplesmente montar uma lista dessas funcionalidades, possivelmente com imagens ilustrativas. Porém, pensando dessa forma, você pode acabar deixando de apresentá-las de uma forma mais criativa, como um menu interativo. Para não correr esse risco, vale a pena pensar primeiro em como queremos que nosso site  que no  nal para, daí, começar a implementar pelo cenário mais limitado. Essa ideia de projeto  nal, inclusive, pode servir de guia para soluções mais criativas mesmo nesses primeiros cenários.
 
 É́ possível desenvolver uma versão mais simples, sem as funcionalidades principais, para os cenários mais limitados, usando progressive enhancement. Essa abordagem é seguida, por exemplo, pelo Gmail, o serviço de e-mail da Google. A versão principal do cliente web é desenvolvida usando recursos avançados de JavaScript. Para simpli car o desenvolvimento dessa versão e ainda permitir o acesso aos e-mails nos navegadores mais limitados, foi desenvolvida uma versão baseada apenas em HTML.
 
-Mesmo nos cenários em que progressive enhancement não é aplicável, é interes- sante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do progressive enhancement: fazer da web uma só, para todos, como idealizou o criador da web, Tim Bernes-Lee.
+Mesmo nos cenários em que progressive enhancement não é aplicável, é interessante ter em mente as preocupações dessa forma de desenvolvimento. Desenvolver para a web é desenvolver para todos, independente de plataforma, navegador, língua e capacidades, e essa é a principal preocupação do progressive enhancement: fazer da web uma só, para todos, como idealizou o criador da web, Tim Bernes-Lee.
