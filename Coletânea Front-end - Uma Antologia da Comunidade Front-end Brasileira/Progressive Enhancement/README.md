@@ -1,4 +1,4 @@
-# Capítulo 01 - Progressive Enhancement: construindo um site melhor para todos?
+# Progressive Enhancement: construindo um site melhor para todos?
 
 Com navegadores cada vez mais modernos, cheios de recursos, a tendência é que nossos sites também  fiquem cada vez mais sofisticados. Porém, não podemos esquecer: nem todo mundo que acessa nossos sites está usando um navegador com os últimos recursos.
 
