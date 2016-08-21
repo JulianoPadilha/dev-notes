@@ -1,6 +1,6 @@
 # HTML APIs
 
-- [X] Web Storage
+- [X] Web Storage - **Awesome!** 
 - [ ] Geolocation
 - [ ] Drag/Drop
 - [ ] App Cache
@@ -8,11 +8,12 @@
 - [ ] SSE
 - [ ] Canvas
 - [ ] Application cache / offline applications
-- [ ] Web Messaging
+- [X] Web Messaging/postMessage - **Cool!**
 - [ ] Microdata
 - [ ] Web Sockets
 - [ ] File API
-- [ ] Indexed DB
+- [X] Indexed DB - **Awesome!** *Write about*
+- [X] WebSQL - *Deprecated* 😕
 - [ ] File Writer
-- [ ] Notifications
-- [ ] ...
+- [X] Web Notifications - **Awesome!** *Write about*
+- [X] History API - **Cool! But... meh! 😶**
