@@ -179,3 +179,85 @@ The wbr element is the word break element. This element is used to assign the po
 So, this element can come in handy if your site features technical, legal or even medical jargon and you want it to appear the right way on the screen.
 
 So, if the text need to wrap on the screen, the browser knows how to break up that word in order to make the wrap work appropriately.
+
+## New JavaScript APIs
+
+`Canvas`
+
+With the Canvas APi, you can declare either a 2D or a 3D context through WebGL and use it as a drawing surface within the browser.
+
+`Contacts`
+
+The Contacts APi is a commom contacts repository found within the browser. Rather than having to have all your friends or contact information saved directly in Google+ or Facebook or some other website, the Contacts API would allow you to have a local repository of this information that websites could access.
+
+`File API`
+
+The File API gives the browser access to sandboxed areas of the user's computer to store data on the file system via JavaScript through the browser.
+
+`Forms`
+
+The Forms API has gotten a boost in HTML5 with the addition of built-in validation.
+
+`Geolocation`
+
+The Geolocation API gives the vrowser the opportunity to request location information from the user. Once granted, the browser is able to use a number of different methods to determine the physical location of the computer or device. The API includes data points such as latitude and longitude and is a perfect fit for a modern location and where applications.
+
+`IndexedDB`
+
+IndexexDB is an API in the realm of local storage within the browser.While there's a few APIs that deal with local storage of data, IndexedDB's purpose is to store sizable amounts of structured data within the browser. So, while you may save a few JSON objects using other APIs, you might store megabytes of data within IndexedDB and it comes stocked with the same type oof indexing you'd expect in any other database to make high performance queries againts data.
+
+You can think of IndexedDB more like an object database rather than a traditional relational database and there are also different APIs for synchronous, as well as async access to data.
+
+`Media Capture`
+
+The Media Capture capabilities will make devices access native to the browser through JavaScript. You'll be able to access the camera, webcam, and so on.
+
+`Microdata`
+
+When you condider HTML5 Microdata, if you think of how content on the web is consumed, you soon realize that the consumer is note just people, but also machines.
+
+Now we have different types of services that are tailor-made for machines and we have webpages with pretty styles and images that are optimized for humans, but what about being able to create a single page that has content fit for both computers, as well as people? Well, Microdata does just that.
+
+By sprinkling in some extra metadata in your existing HTML documents, you're able to readily expose information to machines that is just as easily presented to users.
+
+`Messaging`
+
+The Messaging API is used in conjunction with other APIs like web workers.
+
+`Offline Web Applications`
+
+With the Offline Application API, you have the ability to mark certain pages and resources of you websites as being able to be available, even when there's no connection to the internet available.
+
+This works similarly to he existing browser cache, but resources loaded within the Offline features are reliably served up to the browser upon request, again, when there's no internet connection.
+
+`Selection`
+
+The need for Selection API is really highlighted by the wild success of libraries like jQuery.
+
+In the pre-jQuery pre-HTML5 days, trying to select elements out of the document object model was painful at best. jQuery really filled in that gap by making Selection easy, but now advanced Selection capability is built directly into the browser.
+
+`Server-Sent Events`
+
+Server-Sent Events are an efficient API for sending messages from the server to the browser in one direction,whereas Web Sockets, are a full duplex dibirectional communication path. Now eith Server-Sent Events, you can stream data to connected clients.
+
+`Web Notifications`
+
+Web Notifications is the API that allow you to display notifications to users initiated from the browser. So, this basically gives you an opportunity to display toast within the operating system from a webpage.
+
+`Web Sockets API`
+
+Web Sockets API allows you to send sockets to and from the server. The typical example used here is often a chat application.
+
+`Web Storage`
+
+When we talk about Web Storage, it comes in two flavors - Local Storage and Session Storage.
+
+`Web Workers`
+
+When you think of Web Workers, you can picture in tour mind how threading might work within a browser. If you're building an application where any of the processing is being done on the client, has the opportunity to hand the UI thread, and make the page unresponsive to the user, then by using Web Workers you can split that processing out into a worker, which operates within its own execution context.
+
+`XMLHttpRequestLevel2` or `AJAX`
+
+XMLHttpRequestLevel2 or our good friend AJAX gets an update as well. The AJAX APIs are really pretty full featured, but one thing that'a built-in limitation of AJAX is the single domain constraint. In other words, you can't send an AJAX request to a server that's not the server of origin of the running application.
+
+Level2 allows for cross-domain posting, but adds a security layer so that the interaction is controlled an secure
