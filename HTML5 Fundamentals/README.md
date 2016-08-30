@@ -53,13 +53,13 @@ So it's not a vector environment so drawing is done on the canvas on a pixel-by-
 
 `datalist`
 
-The datalist is a new addition to the collection of the form elements. Ass the code snippet suggests, consider a form where you're giving the user an opportunity to enter their favorite color. While you want the textbox to be open and available for users to enter any value that they want, you also may want to provide a suggestion list and you can do that with an associated datalist.
+The datalist is a new addition to the collection of the form elements. As the code snippet suggests, consider a form where you're giving the user an opportunity to enter their favorite color. While you want the textbox to be open and available for users to enter any value that they want, you also may want to provide a suggestion list and you can do that with an associated datalist.
 
 ```html
 <input type="text" list="colors">
 <datalist id="colors">
-    <option src="Blue"></option>
-    <option src="White"></option>
+    <option value="Blue"></option>
+    <option value="White"></option>
 </datalist>
 ```
 
