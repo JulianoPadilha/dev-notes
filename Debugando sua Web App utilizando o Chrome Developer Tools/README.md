@@ -52,7 +52,7 @@ A função unmonitor desliga o monitoramento na função passada como parâ
 
 Quando algum dos eventos especi cados acontece no objeto passado como parâmetro, o objeto Event é logado. Caso não seja especi cado nenhum parâmetro, todos os eventos serão escutados.
 
-Para  ltrar quais eventos serão monitorados, passe como segundo parâmetro um array com uma lista dos mesmos.
+Para filtrar quais eventos serão monitorados, passe como segundo parâmetro um array com uma lista dos mesmos.
 
 ```js
 // Monitorando apenas os eventos click, resize e scrollmonitorEvents(window, ["click", "resize", "scroll"]);```
