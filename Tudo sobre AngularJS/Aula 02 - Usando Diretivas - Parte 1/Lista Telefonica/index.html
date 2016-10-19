@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="listaTelefonica">
+<head>
+	<title>Lista Telefonica</title>
+	<link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+
+	<style>
+		.jumbotron {
+			margin: 20px auto 0 auto;
+			width: 400px;
+			text-align: center;
+		}
+
+		.table tr th {
+			text-align: center;
+		}
+	</style>
+
+	<script src="lib/angular/angular.js"></script>
+	<script>
+		angular.module("listaTelefonica", []); //Cria um módulo
+		angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($scope) {
+			$scope.app = "Lista Telefonica";
+			$scope.contatos = [
+				{nome: "Pedro", telefone: "919192819"},
+				{nome: "Ana", telefone: "9218928198"},
+				{nome: "Maria", telefone: "829189218"}
+			];
+			$scope.adicionarContato = function(contato){
+				$scope.contatos.push(angular.copy(contato)); //push é um método do objeto array do JS.
+				delete $scope.contato; //Deleta o objeto da referência e limpa os campos dos inputs.
+			}
+		}); //Localiza um módulo e define um controller
+	</script>
+
+</head>
+<body ng-controller="listaTelefonicaCtrl">
+	<div class="jumbotron">
+		<h3>{{app}}</h3>
+		<table class="table table-striped">
+			<tr>
+				<th>Nome</th>
+				<th>Telefone</th>
+			</tr>
+			<tr ng-repeat="contato in contatos">
+				<td>{{contato.nome}}</td>
+				<td>{{contato.telefone}}</td>
+			</tr>
+		</table>
+		<hr>
+		<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome">
+		<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone">
+		<button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)">Adicionar Contato</button>
+	</div>
+</body>
+</html>
