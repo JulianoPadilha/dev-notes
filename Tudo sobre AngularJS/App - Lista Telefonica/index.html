@@ -8,7 +8,7 @@
 	<style>
 		.jumbotron {
 			margin: 20px auto 0 auto;
-			width: 400px;
+			width: 600px;
 			text-align: center;
 		}
 
@@ -22,23 +22,24 @@
 	</style>
 
 	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-locale_pt-br.js"></script>
 	<script src="lib/angular/angular-messages.js"></script>
 	<script>
 		angular.module("listaTelefonica", ["ngMessages"]); //Cria um módulo
 		angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function($scope) {
 			$scope.app = "Lista Telefonica";
 			$scope.contatos = [
-				{nome: "Pedro", telefone: "919192819", cor: "pink"},//Objetos
-				{nome: "Ana", telefone: "9218928198", cor: "red"},
-				{nome: "Maria", telefone: "829189218", cor: "green"}
+				{nome: "Pedro", telefone: "919192819", data: new Date(), operadora: {nome: "Oi", codigo: 12, categoria: "Celular"}, cor: "pink"},//Objetos
+				{nome: "Ana", telefone: "9218928198", data: new Date(), operadora: {nome: "Tim", codigo: 12, categoria: "Celular"}, cor: "red"},
+				{nome: "Maria", telefone: "829189218", data: new Date(), operadora: {nome: "Vivo", codigo: 12, categoria: "Celular"}, cor: "green"}
 			];
 			$scope.operadoras = [
-				{nome: "Oi", codigo: 12, categoria: "Celular"},
+				{nome: "Oi", codigo: 12, categoria: "Celular", preco: 2},
 				//Objetos
-				{nome: "Tim", codigo: 41, categoria: "Celular"},
-				{nome: "Vivo", codigo: 15, categoria: "Celular"},
-				{nome: "GVT", codigo: 17, categoria: "Fixo"},
-				{nome: "Embratel", codigo: 21, categoria: "Fixo"}
+				{nome: "Tim", codigo: 41, categoria: "Celular", preco: 1},
+				{nome: "Vivo", codigo: 15, categoria: "Celular", preco: 3},
+				{nome: "GVT", codigo: 17, categoria: "Fixo", preco: 2},
+				{nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 1}
 			]; //Criamos um array de operadoras
 			$scope.adicionarContato = function(contato){
 				$scope.contatos.push(angular.copy(contato)); //push é um método do objeto array do JS.
@@ -56,6 +57,10 @@
 					return contato.selecionado;
 				});
 			}
+			$scope.ordenarPor = function(campo) {
+				$scope.criterioDeOrdenacao = campo;
+				$scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
+			}
 		}); //Localiza um módulo e define um controller
 	</script>
 
@@ -63,19 +68,22 @@
 <body ng-controller="listaTelefonicaCtrl">
 	<div class="jumbotron">
 		<h3>{{app}}</h3>
+		<input type="text" class="form-control" ng-model="criterioDeBusca" placeholder="O que você deseja buscar?">
 		<table ng-show="contatos.length > 0" class="table">
 			<tr>
-				<th></th>
-				<th>Nome</th>
-				<th>Telefone</th>
+				<th></th> 
+				<th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+				<th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
 				<th>Operadora</th>
+				<th>Data</th>
 				<th></th>
 			</tr>
-			<tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos">
+			<tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | limitTo: 3  | filter: criterioDeBusca | orderBy: criterioDeOrdenacao: direcaoDaOrdenacao">
 				<td><input type="checkbox" ng-model="contato.selecionado"></td>
-				<td>{{contato.nome}}</td>
+				<td>{{contato.nome | uppercase}}</td>
 				<td>{{contato.telefone}}</td>
-				<td>{{contato.operadora.nome}}</td>
+				<td>{{contato.operadora.nome | lowercase}}</td>
+				<td>{{contato.data | date:'dd/MM/yyyy HH:mm'}}</td>
 				<td><div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.cor}"></div></td>
 			</tr>
 		</table>
@@ -83,7 +91,7 @@
 		<form action="" name="contatoForm">
 			<input type="text" class="form-control" ng-model="contato.nome" placeholder="Nome" name="nome" ng-required="true" ng-minlength="10">
 			<input type="text" class="form-control" ng-model="contato.telefone" placeholder="Telefone" name="telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/">
-			<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
+			<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + ' (' + (operadora.preco | currency) + ')' for operadora in operadoras | orderBy: 'nome'">
 				<option value="">Selecione uma operadora</option>
 			</select>
 		</form>
