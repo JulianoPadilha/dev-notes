@@ -1,8 +1,10 @@
 # CSS - Flexbox
 
-Fontes: 
-[https://www.origamid.com/cursos/css-flexbox/](CSS Flexbox Origamid)
-[https://origamid.com/projetos/flexbox-guia-completo/](Guia completo)
+Fontes:
+ 
+[CSS Flexbox Origamid](https://www.origamid.com/cursos/css-flexbox/)
+
+[Guia completo](https://origamid.com/projetos/flexbox-guia-completo/)
 
 ## Fundamentos do Flexbox
 
